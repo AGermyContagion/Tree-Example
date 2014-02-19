@@ -16,9 +16,6 @@ public class BinaryTree {
 	
 	private String toStringHelper(BinaryNode<Integer, String> focusNode) {
 		String result = "";
-		if (root == null) {
-			return "()";
-		}
 		result += focusNode;
 		if (focusNode.getLeft() != null) toStringHelper(focusNode.getLeft());
 		if (focusNode.getRight() != null) toStringHelper(focusNode.getRight());
@@ -109,8 +106,7 @@ public class BinaryTree {
 	public int getNumberOfNodes() { return this.numberOfNodes; }
 	
 	public void clearTree() {
-		this.root = null;
-		this.numberOfNodes = 0;
+		root = null;
 	}
 	
 }

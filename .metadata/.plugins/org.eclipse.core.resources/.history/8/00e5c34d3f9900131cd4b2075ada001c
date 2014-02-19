@@ -25,7 +25,5 @@ public class Runner {
 		System.out.println(tree.inorderTraverse());
 		System.out.println(tree.preorderTraverse());
 		System.out.println(tree.postorderTraverse());
-		tree.clearTree();
-		System.out.println(tree);
 	}
 }
