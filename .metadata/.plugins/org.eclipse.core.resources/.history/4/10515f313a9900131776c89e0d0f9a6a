@@ -1,30 +1,15 @@
 
 public class BinaryTree {
-	private BinaryNode<Integer, String> root;
-	private int numberOfNodes;
+	BinaryNode<Integer, String> root;
+	int numberOfNodes;
 	
 	public BinaryTree() {
 		this.root = null;
 		this.numberOfNodes = 0;
 	}
 	
-	/**
-	 * Overrides the toString() method
-	 * Returns the Binary Tree Structure as a String
-	 */
-	@Override public String toString() { return toStringHelper(root); }
-	
-	private String toStringHelper(BinaryNode<Integer, String> focusNode) {
-		String result = "";
-		result += focusNode;
-		if (focusNode.getLeft() != null) toStringHelper(focusNode.getLeft());
-		if (focusNode.getRight() != null) toStringHelper(focusNode.getRight());
-		return result;
-	}
-	
 	public void addNode(int key, String value) {
 		BinaryNode<Integer, String> newNode = new BinaryNode<Integer, String>(key, value);
-		numberOfNodes++;
 		if (this.root == null) {
 			root = newNode;
 		} else {
@@ -103,6 +88,18 @@ public class BinaryTree {
 		return result;
 	}
 	
-	public int getNumberOfNodes() { return this.numberOfNodes; }
+	/**
+	 * Overrides the toString() method
+	 * Returns the Binary Tree Structure as a String
+	 */
+	@Override public String toString() { return toStringHelper(root); }
+	
+	private String toStringHelper(BinaryNode<Integer, String> focusNode) {
+		String result = "";
+		result += focusNode;
+		if (focusNode.getLeft() != null) toStringHelper(focusNode.getLeft());
+		if (focusNode.getRight() != null) toStringHelper(focusNode.getRight());
+		return result;
+	}
 	
 }
