@@ -14,7 +14,7 @@ public class BinaryTree<Key extends Comparable<Key>, V extends Comparable<V>> {
 	 */
 	@Override public String toString() { return toStringHelper(root); }
 	
-	private String toStringHelper(BinaryNode<Key, V> focusNode) {
+	private String toStringHelper(BinaryNode<Integer, String> focusNode) {
 		String result = "";
 		if (root == null) {
 			return "()";
@@ -25,17 +25,17 @@ public class BinaryTree<Key extends Comparable<Key>, V extends Comparable<V>> {
 		return result;
 	}
 	
-	public void addNode(Key key, V value) {
-		BinaryNode<Key, V> newNode = new BinaryNode<Key, V>(key, value);
+	public void addNode(int key, String value) {
+		BinaryNode<Integer, String> newNode = new BinaryNode<Integer, String>(key, value);
 		numberOfNodes++;
 		if (this.root == null) {
 			root = newNode;
 		} else {
-			BinaryNode<Key, V> focusNode = root;
-			BinaryNode<Key, V> parent;
+			BinaryNode<Integer, String> focusNode = root;
+			BinaryNode<Integer, String> parent;
 			while (true) {
 				parent = focusNode;
-				if (key.compareTo(focusNode.getKey()) == -1) {
+				if (key < focusNode.getKey()) {
 					focusNode = focusNode.getLeft();
 					if (focusNode == null) {
 						parent.setLeft(newNode);
@@ -61,7 +61,7 @@ public class BinaryTree<Key extends Comparable<Key>, V extends Comparable<V>> {
 	 * @param focusNode
 	 * @return String with the tree traversed by inorder
 	 */
-	public String inorderTraverseHelper(BinaryNode<Key, V> focusNode, char output) {
+	public String inorderTraverseHelper(BinaryNode<Integer, String> focusNode, char output) {
 		String result = "";
 		if (focusNode.getLeft() != null) result += inorderTraverseHelper(focusNode.getLeft(), output);
 		
@@ -77,7 +77,7 @@ public class BinaryTree<Key extends Comparable<Key>, V extends Comparable<V>> {
 	
 	public String preorderTraverse(char output) { return preorderTraverseHelper(root, output); }
 	
-	private String preorderTraverseHelper(BinaryNode<Key, V> focusNode, char output) {
+	private String preorderTraverseHelper(BinaryNode<Integer, String> focusNode, char output) {
 		String result = "";
 		if (output == 'k') result += "(" + focusNode.getKey() + ")";
 		else if (output == 'v') result += "[" + focusNode.getValue() + "]";
@@ -93,7 +93,7 @@ public class BinaryTree<Key extends Comparable<Key>, V extends Comparable<V>> {
 	
 	public String postorderTraverse(char output) { return postorderTraverseHelper(root, output); }
 	
-	private String postorderTraverseHelper(BinaryNode<Key, V> focusNode, char output) {
+	private String postorderTraverseHelper(BinaryNode<Integer, String> focusNode, char output) {
 		String result = "";
 		
 		if (focusNode.getLeft() != null)  result += postorderTraverseHelper(focusNode.getLeft(), output);

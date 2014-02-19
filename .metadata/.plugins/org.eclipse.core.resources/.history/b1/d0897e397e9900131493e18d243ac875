@@ -1,5 +1,5 @@
 
-public class BinaryNode<Key extends Comparable<Key>, V extends Comparable<V>> {
+public class BinaryNode<Key extends Comparable<Key>, V> {
 	private Key key;
 	private V value;
 	private BinaryNode<Key, V> left;

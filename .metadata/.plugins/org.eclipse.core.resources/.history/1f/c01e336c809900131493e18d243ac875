@@ -12,8 +12,6 @@ public class Runner {
 		tree.addNode("D", 18);
 		tree.addNode("E", 16);
 		tree.addNode("F", 5);
-		tree.addNode("E", 16);
-		tree.addNode("G", 7);
 		tree.addNode("G", 7);
 		
 		System.out.println(tree);

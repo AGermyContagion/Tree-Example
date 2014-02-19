@@ -41,7 +41,7 @@ public class BinaryTree<Key extends Comparable<Key>, V extends Comparable<V>> {
 						parent.setLeft(newNode);
 						return;
 					}
-				} else {
+				} else if (key.compareTo(focusNode.getKey()) == 1){
 					focusNode = focusNode.getRight();
 					if(focusNode == null) {
 						parent.setRight(newNode);
