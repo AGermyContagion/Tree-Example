@@ -17,15 +17,6 @@ public class Runner {
 		tree.addNode(41, "L");
 		
 		System.out.println(tree);
-		
-		System.out.println(tree.inorderTraverse('k'));
-		System.out.println(tree.preorderTraverse('k'));
-		System.out.println(tree.postorderTraverse('k'));
-		
-		System.out.println(tree.inorderTraverse('v'));
-		System.out.println(tree.preorderTraverse('v'));
-		System.out.println(tree.postorderTraverse('v'));
-		
 		System.out.println(tree.inorderTraverse());
 		System.out.println(tree.preorderTraverse());
 		System.out.println(tree.postorderTraverse());

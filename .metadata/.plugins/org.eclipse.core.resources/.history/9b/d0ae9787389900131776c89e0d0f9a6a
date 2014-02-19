@@ -63,8 +63,8 @@ public class BinaryTree {
 	
 	private String preorderTraverseHelper(BinaryNode<Integer, String> focusNode, char output) {
 		String result = "";
-		if (output == 'k') result += "(" + focusNode.getKey() + ")";
-		else if (output == 'v') result += "[" + focusNode.getValue() + "]";
+		if (output == 'k') result += focusNode.getKey();
+		else if (output == 'v') result += focusNode.getValue();
 		else result += ("(" + focusNode.getKey() + ":" + focusNode.getValue() + ")");
 		
 		if (focusNode.getLeft() != null)  result += preorderTraverseHelper(focusNode.getLeft(), output);
@@ -88,8 +88,8 @@ public class BinaryTree {
 		
 		if (focusNode.getRight() != null) result += postorderTraverseHelper(focusNode.getRight(), output);
 		
-		if (output == 'k') result += "(" + focusNode.getKey() + ")";
-		else if (output == 'v') result += "[" + focusNode.getValue() + "]";
+		if (output == 'k') result += focusNode.getKey();
+		else if (output == 'v') result += focusNode.getValue();
 		else result += ("(" + focusNode.getKey() + ":" + focusNode.getValue() + ")");
 		return result;
 	}
