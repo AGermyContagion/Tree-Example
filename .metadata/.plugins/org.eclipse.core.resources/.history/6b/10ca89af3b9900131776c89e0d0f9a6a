@@ -3,13 +3,18 @@ public class Runner {
 
 	public static void main(String[] args) {
 		BinaryTree tree = new BinaryTree();
-		tree.addNode(15, "A");
-		tree.addNode(20, "B");
-		tree.addNode(25, "C");
-		tree.addNode(18, "D");
-		tree.addNode(16, "E");
-		tree.addNode(5, "F");
-		tree.addNode(7, "G");
+		tree.addNode(23, "I");
+		tree.addNode(31, "J");
+		tree.addNode(37, "K");
+		tree.addNode(2, "A");
+		tree.addNode(3, "B");
+		tree.addNode(5, "C");
+		tree.addNode(7, "D");
+		tree.addNode(11, "E");
+		tree.addNode(13, "F");
+		tree.addNode(17, "G");
+		tree.addNode(19, "H");
+		tree.addNode(41, "L");
 		
 		System.out.println(tree);
 		System.out.println(tree.getNumberOfNodes());
