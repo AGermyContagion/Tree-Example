@@ -28,9 +28,13 @@ public class BinaryTree {
 		}
 	}
 	
-	public String inorderTraverse() { return inorderTraverse('b'); }
+	public String inorderTraverse() {
+		return inorderTraverse('b');
+	}
 	
-	public String inorderTraverse(char output) { return inorderTraverseHelper(root, output); }
+	public String inorderTraverse(char output) {
+		return inorderTraverseHelper(root, output);
+	}
 	
 	/**
 	 * Traverse the tree and retern a string of the traverse
@@ -49,9 +53,13 @@ public class BinaryTree {
 		return result;
 	}
 	
-	public String preorderTraverse() { return preorderTraverse('b'); }
+	public String preorderTraverse() {
+		return preorderTraverse('b');
+	}
 	
-	public String preorderTraverse(char output) { return preorderTraverseHelper(root, output); }
+	public String preorderTraverse(char output) {
+		return preorderTraverseHelper(root, output);
+	}
 	
 	private String preorderTraverseHelper(BinaryNode<Integer, String> focusNode, char output) {
 		String result = "";
@@ -65,9 +73,13 @@ public class BinaryTree {
 		return result;
 	}
 	
-	public String postorderTraverse() { return postorderTraverse('b'); }
+	public String postorderTraverse() {
+		return postorderTraverse('b');
+	}
 	
-	public String postorderTraverse(char output) { return postorderTraverseHelper(root, output); }
+	public String postorderTraverse(char output) {
+		return postorderTraverseHelper(root, output);
+	}
 	
 	private String postorderTraverseHelper(BinaryNode<Integer, String> focusNode, char output) {
 		String result = "";
@@ -86,7 +98,9 @@ public class BinaryTree {
 	 * Overrides the toString() method
 	 * Returns the Binary Tree Structure as a String
 	 */
-	@Override public String toString() { return toStringHelper(root); }
+	@Override public String toString() {
+		return toStringHelper(root);
+	}
 	
 	private String toStringHelper(BinaryNode<Integer, String> focusNode) {
 		String result = "";
