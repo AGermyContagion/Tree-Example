@@ -52,7 +52,7 @@ public class BinaryTree<Key extends Comparable<Key>, V extends Comparable<V>> {
 		}
 	}
 	
-	public boolean removeNode(Key key) {
+	public void removeNode(Key key) {
 		BinaryNode<Key, V> focusNode = root;
 		BinaryNode<Key, V> parent = root;
 		boolean isALeftChild = true;
@@ -63,35 +63,8 @@ public class BinaryTree<Key extends Comparable<Key>, V extends Comparable<V>> {
 			if (key.compareTo(focusNode.getKey()) == -1) {
 				isALeftChild = true;
 				focusNode = focusNode.getLeft();
-			} else {
-				isALeftChild = false;
-				focusNode = focusNode.getRight();
-			}
-			
-			if (focusNode == null) {
-				return false;
 			}
 		}
-		
-		if (focusNode.isLeaf()) {
-			if (focusNode.equals(root)) {
-				root = null;
-			} else if (isALeftChild) {
-				parent.setLeft(null);
-			} else {
-				parent.setRight(null);
-			}
-		} else if (focusNode.getRight() == null) {
-			if (focusNode.equals(root)) root = focusNode.getLeft();
-			else if (isALeftChild) parent.setLeft(focusNode.getLeft());
-			else parent.setRight(focusNode.getLeft());
-		} else if (focusNode.getLeft() == null) {
-			if (focusNode.equals(root)) root = focusNode.getRight();
-			else if (isALeftChild) parent.setLeft(focusNode.getRight());
-			else parent.setLeft(focusNode.getRight());
-		}
-		
-		// Still not done
 	}
 	
 	public String inorderTraverse() { return inorderTraverse('b'); }

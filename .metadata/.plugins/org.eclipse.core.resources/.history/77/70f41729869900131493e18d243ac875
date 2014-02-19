@@ -90,8 +90,6 @@ public class BinaryTree<Key extends Comparable<Key>, V extends Comparable<V>> {
 			else if (isALeftChild) parent.setLeft(focusNode.getRight());
 			else parent.setLeft(focusNode.getRight());
 		}
-		
-		// Still not done
 	}
 	
 	public String inorderTraverse() { return inorderTraverse('b'); }

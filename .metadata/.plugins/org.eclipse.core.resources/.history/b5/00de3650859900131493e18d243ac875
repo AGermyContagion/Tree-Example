@@ -84,14 +84,7 @@ public class BinaryTree<Key extends Comparable<Key>, V extends Comparable<V>> {
 		} else if (focusNode.getRight() == null) {
 			if (focusNode.equals(root)) root = focusNode.getLeft();
 			else if (isALeftChild) parent.setLeft(focusNode.getLeft());
-			else parent.setRight(focusNode.getLeft());
-		} else if (focusNode.getLeft() == null) {
-			if (focusNode.equals(root)) root = focusNode.getRight();
-			else if (isALeftChild) parent.setLeft(focusNode.getRight());
-			else parent.setLeft(focusNode.getRight());
 		}
-		
-		// Still not done
 	}
 	
 	public String inorderTraverse() { return inorderTraverse('b'); }
