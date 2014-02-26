@@ -1,0 +1,8 @@
+import java.util.Comparator;
+import java.util.Comparable;
+
+public class BinaryNodeComparator implements Comparator<BinaryNode<Key key extends Comparable<Key>, V>> {
+	public int compare(BinaryNode<Key, V> bn1, BinaryNode<Key, V> bn2) {
+		
+	}
+}

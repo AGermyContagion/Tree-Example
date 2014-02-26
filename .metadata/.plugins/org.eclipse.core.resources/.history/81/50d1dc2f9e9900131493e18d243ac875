@@ -1,0 +1,118 @@
+
+public class BinaryTree<Key extends Comparable<Key>, V extends Comparable<V>> {
+	private BinaryNode<Key, V> root;
+	private int numberOfNodes;
+	
+	public BinaryTree() {
+		this.root = null;
+		this.numberOfNodes = 0;
+	}
+	
+	/**
+	 * Overrides the toString() method
+	 * Returns the Binary Tree Structure as a String
+	 */
+	@Override public String toString() { return toStringHelper(root); }
+	
+	private String toStringHelper(BinaryNode<Key, V> focusNode) {
+		String result = "";
+		if (root == null) {
+			return "()";
+		}
+		result += focusNode;
+		if (focusNode.getLeft() != null) toStringHelper(focusNode.getLeft());
+		if (focusNode.getRight() != null) toStringHelper(focusNode.getRight());
+		return result;
+	}
+	
+	public void addNode(Key key, V value) {
+		BinaryNode<Key, V> newNode = new BinaryNode<Key, V>(key, value);
+		numberOfNodes++;
+		if (this.root == null) {
+			root = newNode;
+		} else {
+			BinaryNode<Key, V> focusNode = root;
+			BinaryNode<Key, V> parent;
+			while (true) {
+				parent = focusNode;
+				if (key.compareTo(focusNode.getKey()) == -1) {
+					focusNode = focusNode.getLeft();
+					if (focusNode == null) {
+						parent.setLeft(newNode);
+						return;
+					}
+				} else {
+					focusNode = focusNode.getRight();
+					if(focusNode == null) {
+						parent.setRight(newNode);
+						return;
+					}
+				}
+			}
+		}
+	}
+	
+	public String inorderTraverse() { return inorderTraverse('b'); }
+	
+	public String inorderTraverse(char output) { return inorderTraverseHelper(root, output); }
+	
+	/**
+	 * Traverse the tree and retern a string of the traverse
+	 * @param focusNode
+	 * @return String with the tree traversed by inorder
+	 */
+	public String inorderTraverseHelper(BinaryNode<Key, V> focusNode, char output) {
+		String result = "";
+		if (focusNode.getLeft() != null) result += inorderTraverseHelper(focusNode.getLeft(), output);
+		
+		if (output == 'k') result += "(" + focusNode.getKey() + ")";
+		else if (output == 'v') result += "[" + focusNode.getValue() + "]";
+		else result += ("(" + focusNode.getKey() + ":" + focusNode.getValue() + ")");
+		
+		if (focusNode.getRight() != null) result += inorderTraverseHelper(focusNode.getRight(), output);
+		return result;
+	}
+	
+	public String preorderTraverse() { return preorderTraverse('b'); }
+	
+	public String preorderTraverse(char output) { return preorderTraverseHelper(root, output); }
+	
+	private String preorderTraverseHelper(BinaryNode<Key, V> focusNode, char output) {
+		String result = "";
+		if (output == 'k') result += "(" + focusNode.getKey() + ")";
+		else if (output == 'v') result += "[" + focusNode.getValue() + "]";
+		else result += ("(" + focusNode.getKey() + ":" + focusNode.getValue() + ")");
+		
+		if (focusNode.getLeft() != null)  result += preorderTraverseHelper(focusNode.getLeft(), output);
+		
+		if (focusNode.getRight() != null) result += preorderTraverseHelper(focusNode.getRight(), output);
+		return result;
+	}
+	
+	public String postorderTraverse() { return postorderTraverse('b'); }
+	
+	public String postorderTraverse(char output) { return postorderTraverseHelper(root, output); }
+	
+	private String postorderTraverseHelper(BinaryNode<Key, V> focusNode, char output) {
+		String result = "";
+		
+		if (focusNode.getLeft() != null)  result += postorderTraverseHelper(focusNode.getLeft(), output);
+		
+		if (focusNode.getRight() != null) result += postorderTraverseHelper(focusNode.getRight(), output);
+		
+		if (output == 'k') result += "(" + focusNode.getKey() + ")";
+		else if (output == 'v') result += "[" + focusNode.getValue() + "]";
+		else result += ("(" + focusNode.getKey() + ":" + focusNode.getValue() + ")");
+		return result;
+	}
+	
+	public int getNumberOfNodes() { return this.numberOfNodes; }
+	
+	public
+	
+	public void clearTree() {
+		this.root = null;
+		this.numberOfNodes = 0;
+	}
+	
+}

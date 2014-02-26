@@ -1,0 +1,12 @@
+import java.util.ArrayList;
+
+public class Runner {
+
+	public static void main(String[] args) {
+		BinaryTree<String, Integer> tree = new BinaryTree<String, Integer>();
+		ArrayList<BinaryNode<Integer, Character>> nodes = new ArrayList<BinaryNode<Integer, Character>>();
+		
+		nodes.add(new BinaryNode<Integer, Character>());
+		
+	}
+}

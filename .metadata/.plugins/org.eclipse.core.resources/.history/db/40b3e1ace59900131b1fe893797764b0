@@ -1,0 +1,36 @@
+
+public class Runner {
+
+	public static void main(String[] args) {
+		BinaryTree<String, Integer> tree = new BinaryTree<String, Integer>();
+		//long startTime;
+		//long endTime;
+		
+		tree.addNode("Jeremy", 15);
+		tree.addNode("Mary", 20);
+		tree.addNode("Tanner", 25);
+		tree.addNode("Steven", 18);
+		tree.addNode("Ryan", 16);
+		tree.addNode("Alex", 5);
+		tree.addNode("Sylvia", 16);
+		tree.addNode("Gregor", 7);
+		tree.addNode("Pat", 7);
+		
+		System.out.println(tree);
+		System.out.println(tree.getNumberOfNodes());
+		System.out.println(tree.inorderTraverse('k'));
+		System.out.println(tree.preorderTraverse('k'));
+		System.out.println(tree.postorderTraverse('k'));
+		
+		System.out.println(tree.inorderTraverse('v'));
+		System.out.println(tree.preorderTraverse('v'));
+		System.out.println(tree.postorderTraverse('v'));
+		
+		System.out.println(tree.inorderTraverse());
+		System.out.println(tree.preorderTraverse());
+		System.out.println(tree.postorderTraverse());
+		tree.clearTree();
+		System.out.println(tree);
+		
+	}
+}

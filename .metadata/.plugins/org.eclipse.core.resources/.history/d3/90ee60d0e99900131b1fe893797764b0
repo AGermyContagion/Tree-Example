@@ -1,0 +1,6 @@
+
+public class BinaryNodeComparator implements Comparator<BinaryNode<Key extends Comparator<Key>, V extends Comparator<V>>> {
+	public int compare(BinaryNode<Key, V> bn1, BinaryNode<Key, V> bn2) {
+		
+	}
+}
